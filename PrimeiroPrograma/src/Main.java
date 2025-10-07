@@ -8,8 +8,8 @@ public class Main {
         Scanner sc = new Scanner (System.in);
 
         String nome_usuario;
-        String email_usuario;
-        String senha_usuario;
+        String email_usuario, email_acesso;
+        String senha_usuario, senha_acesso;
 
         System.out.println("--- CAMPO DE REGISTRO ---");
         System.out.print("Nome: ");
@@ -20,6 +20,25 @@ public class Main {
             senha_usuario = sc.nextLine();
             
         System.out.println("--- RESGISTRO CRIADO COM SUCESSO ---");
+        System.out.println(" ");
+
+        System.out.println("--- INSIRA SEU REGISTRO ---");
+        System.out.println(" ");
+
+        System.out.print("Email: ");
+                email_acesso = sc.nextLine();
+        System.out.print("Senha: ");
+                senha_acesso = sc.nextLine();
+
+        while (email_acesso != email_usuario || senha_acesso != senha_usuario) {
+            System.out.println("Email ou Senha incorretos! Tente novamente!");
+            System.out.println(" ");
+
+            System.out.print("Email: ");
+                email_acesso = sc.nextLine();
+            System.out.print("Senha: ");
+                senha_acesso = sc.nextLine();
+        }
         System.out.println(" ");
 
         System.out.println("--- SEJA BEM-VINDO SENHOR(A) " + nome_usuario + " AO SISTEMA DE COMPRAS ---");
@@ -48,16 +67,16 @@ public class Main {
         for (int i = 0; i < N; i++) {
             System.out.print("Informe o "+ (i + 1) +"º produto: ");
                 produtos[i] = sc.nextLine();
-            System.out.print("Informe quantas unidades o produto "+ produtos[i] + " está sendo comprado: ");
+            System.out.print("Informe quantas unidades o "+ produtos[i] + " está sendo comprado: ");
                 quantidade_produtos[i] = sc.nextInt();
-            System.out.print("Informe o preço da unidade do produto "+ produtos[i] +": R$");
+            System.out.print("Informe o preço da unidade do "+ produtos[i] +": R$");
                 preco_produto[i] = sc.nextDouble();
             sc.nextLine();
         }
 
         System.out.println(" ");
         for (int i = 0; i < N; i++) {
-            System.out.print("Preço total do produto "+ produtos[i] +": R$");
+            System.out.print("Preço total do "+ produtos[i] +": R$");
 
             calculo_produtos[i] = preco_produto[i] * quantidade_produtos[i];
 
