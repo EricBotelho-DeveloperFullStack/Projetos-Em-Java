@@ -1,4 +1,5 @@
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -30,7 +31,7 @@ public class Main {
         System.out.print("Senha: ");
                 senha_acesso = sc.nextLine();
 
-        while (email_acesso != email_usuario || senha_acesso != senha_usuario) {
+        while ((!Objects.equals(email_acesso, email_usuario)) || (!Objects.equals(senha_acesso, senha_usuario))) {
             System.out.println("Email ou Senha incorretos! Tente novamente!");
             System.out.println(" ");
 
@@ -39,6 +40,8 @@ public class Main {
             System.out.print("Senha: ");
                 senha_acesso = sc.nextLine();
         }
+        System.out.println(" ");
+        System.out.println("---> ACESSO LIBERADO :) <---");
         System.out.println(" ");
 
         System.out.println("--- SEJA BEM-VINDO SENHOR(A) " + nome_usuario + " AO SISTEMA DE COMPRAS ---");
